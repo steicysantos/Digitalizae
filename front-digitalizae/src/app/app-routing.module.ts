@@ -19,7 +19,8 @@ const routes: Routes = [
   { path: 'tabela-processo-seletivo', component:TabelaProcessoSeletivoComponent},
   { path: 'cadastro-novas-fases', component:CadastroNovasFasesComponent},
   { path: 'perfil-candidato', component:PerfilCandidatoComponent},
-  { path: 'local-prova', component:LocalProvaComponent}
+  { path: 'local-prova', component:LocalProvaComponent},
+
 ];
 
 @NgModule({
