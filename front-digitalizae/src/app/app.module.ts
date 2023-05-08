@@ -12,6 +12,7 @@ import { TabelaProcessoSeletivoComponent } from './tabela-processo-seletivo/tabe
 import { PerfilCandidatoComponent } from './perfil-candidato/perfil-candidato.component';
 import { VisualizaFaseComponent } from './visualiza-fase/visualiza-fase.component';
 import { LocalProvaComponent } from './local-prova/local-prova.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LocalProvaComponent } from './local-prova/local-prova.component';
     TabelaProcessoSeletivoComponent,
     PerfilCandidatoComponent,
     VisualizaFaseComponent,
-    LocalProvaComponent
+    LocalProvaComponent,
+    TopBarComponent
   ],
   imports: [
     BrowserModule,
