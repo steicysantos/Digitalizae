@@ -1,0 +1,48 @@
+<div class="register-candidato">
+    <div class="title">Cadastro candidato</div>
+    <form action="#">
+        <div class="user-details">
+            <div class="input-box">
+                <span class="details">Nome</span>
+                <input type="text" id="Nome" placeholder="" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Data de nascimento</span>
+                <input type="date" id="date" placeholder="" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Telefone</span>
+                <input type="text" id="edv" placeholder="" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Email</span>
+                <input type="text" id="login" placeholder="" required>
+            </div>
+            <div class="column" style="display: flex; flex-direction: column;">
+                <label for="details">Selecione o curso desejado:</label>
+                <select name="curso" id="curso" style="margin-top: 1.5rem;">
+                    <option value="none">-</option>
+                    <option value="ads">Desenvolvimento de sistemas</option>
+                    <option value="mecatronica">Mecatrônica</option>
+                    <option value="mecanica">Mecânica</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+                <span class="details">Login</span>
+                <input type="text" id="login" placeholder="" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Senha</span>
+                <input type="password" id="senha" placeholder="" required>
+            </div>
+            <div class="input-box">
+                <span class="details" for="type" style="margin-bottom: 1.4rem;">O usuário está ativo?</span>
+                <input type="radio" name="type" value="1" required>Sim
+                <input type="radio" name="type" value="2" required>Não
+            </div>
+
+        </div>
+        <button class="btn-login">Cadastrar</button>
+    </form>
+</div>
