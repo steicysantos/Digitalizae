@@ -1,1 +1,62 @@
-<p>historico-processos works!</p>
+<body>
+    <div class="title">
+        Processos Seletivos Cadastrados
+    </div>
+    <div class="container">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nº</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Data de Início</th>
+                <th scope="col">Data de Fim</th>
+                <th scope="col">Qtde</th>
+                <th scope="col">Ativo</th>
+                <th scope="col">Editar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let i of processos">
+                <td>{{i.qtdeMax}}</td>
+                <td>{{i.nome}}</td>
+                <td>{{i.DataInicio}}</td>
+                <td>{{i.DataFim}}</td>
+                <td>{{i.qtdeMax}}</td>
+                <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="secondary"></td>
+                <td class="edit"><img src="../../assets/editing.png" alt=""  (click)="isVisible ? isVisible = false : isVisible = true"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+</body>
+
+<div class="register-processo-seletivo" *ngIf="isVisible">
+    <div class="title">Cadastro processo seletivo</div>
+    <form action="#">
+        <div class="user-details">
+            <div class="input-box">
+                <span class="details">Curso</span>
+                <input type="text" id="Nome" placeholder="" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Início processo seletivo</span>
+                <input type="date" id="date" placeholder="" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Fim processo seletivo</span>
+                <input type="date" id="date" placeholder="" required>
+            </div>
+            <div class="input-box">
+                <span class="details" for="type" style="margin-bottom: 1.4rem;">O usuário está ativo?</span>
+                <input type="radio" name="type" value="1" required>Sim
+                <input type="radio" name="type" value="2" required>Não
+            </div>
+            <div class="input-box">
+                <span class="details">Quantidade máxima de candidatos</span>
+                <input type="number" id="numcandidatos" placeholder="" required>
+            </div>
+        </div>
+        <button class="btn-login">Cadastrar</button>
+    </form>
+    <td class="edit"><img src="../../assets/editing.png" alt="" (click)="isVisible ? isVisible = false : isVisible = true"></td>
+</div>
