@@ -13,6 +13,7 @@ import { PerfilCandidatoComponent } from './perfil-candidato/perfil-candidato.co
 import { VisualizaFaseComponent } from './visualiza-fase/visualiza-fase.component';
 import { LocalProvaComponent } from './local-prova/local-prova.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { ProgressoUsuarioComponent } from './progresso-usuario/progresso-usuario.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     PerfilCandidatoComponent,
     VisualizaFaseComponent,
     LocalProvaComponent,
-    TopBarComponent
+    TopBarComponent,
+    ProgressoUsuarioComponent
   ],
   imports: [
     BrowserModule,

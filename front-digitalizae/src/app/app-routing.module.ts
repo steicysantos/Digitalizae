@@ -9,7 +9,7 @@ import { TabelaProcessoSeletivoComponent } from './tabela-processo-seletivo/tabe
 import { CadastroNovasFasesComponent } from './cadastro-novas-fases/cadastro-novas-fases.component';
 import { PerfilCandidatoComponent } from './perfil-candidato/perfil-candidato.component';
 import { LocalProvaComponent } from './local-prova/local-prova.component';
-
+import { ProgressoUsuarioComponent } from './progresso-usuario/progresso-usuario.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'cadastro-candidato', component: CadastroCandidatoComponent},
@@ -20,7 +20,9 @@ const routes: Routes = [
   { path: 'cadastro-novas-fases', component:CadastroNovasFasesComponent},
   { path: 'perfil-candidato', component:PerfilCandidatoComponent},
   { path: 'local-prova', component:LocalProvaComponent},
-
+  { path: 'local-prova', component:LocalProvaComponent},
+  { path: 'progresso-usuario', component:ProgressoUsuarioComponent},
+  
 ];
 
 @NgModule({

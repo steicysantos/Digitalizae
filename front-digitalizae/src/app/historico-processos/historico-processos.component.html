@@ -13,6 +13,7 @@
                 <th scope="col">Qtde</th>
                 <th scope="col">Ativo</th>
                 <th scope="col">Editar</th>
+                <th scope="col">Configurar</th>
               </tr>
             </thead>
             <tbody>
@@ -24,39 +25,11 @@
                 <td>{{i.qtdeMax}}</td>
                 <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="secondary"></td>
                 <td class="edit"><img src="../../assets/editing.png" alt=""  (click)="isVisible ? isVisible = false : isVisible = true"></td>
+                <td class="edit"><img src="../../assets/editing.png" alt=""  ></td>
               </tr>
             </tbody>
           </table>
         </div>
 </body>
 
-<div class="register-processo-seletivo" *ngIf="isVisible">
-    <div class="title">Cadastro processo seletivo</div>
-    <form action="#">
-        <div class="user-details">
-            <div class="input-box">
-                <span class="details">Curso</span>
-                <input type="text" id="Nome" placeholder="" required>
-            </div>
-            <div class="input-box">
-                <span class="details">Início processo seletivo</span>
-                <input type="date" id="date" placeholder="" required>
-            </div>
-            <div class="input-box">
-                <span class="details">Fim processo seletivo</span>
-                <input type="date" id="date" placeholder="" required>
-            </div>
-            <div class="input-box">
-                <span class="details" for="type" style="margin-bottom: 1.4rem;">O usuário está ativo?</span>
-                <input type="radio" name="type" value="1" required>Sim
-                <input type="radio" name="type" value="2" required>Não
-            </div>
-            <div class="input-box">
-                <span class="details">Quantidade máxima de candidatos</span>
-                <input type="number" id="numcandidatos" placeholder="" required>
-            </div>
-        </div>
-        <button class="btn-login">Cadastrar</button>
-    </form>
-    <td class="edit"><img src="../../assets/editing.png" alt="" (click)="isVisible ? isVisible = false : isVisible = true"></td>
-</div>
+<app-cadastro-novas-fases *ngIf="isVisible"></app-cadastro-novas-fases>
