@@ -1,3 +1,15 @@
+
+.container{
+    width: 60%;
+    align-self: center;
+    justify-content: center;
+    background-color: aquamarine;
+    border-radius: 15px;
+    padding: 25px;
+}
+:host {
+    height: 100%
+}
 .progressBar {
     width: 100%;
     display: flex;
@@ -14,7 +26,7 @@
     justify-content: space-between;
     counter-reset: step;
     margin: 0;
-    width: 85%;
+    width: 100%;
 
 }
 
@@ -41,8 +53,8 @@
 
 
 .progress-step {
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
     background-color: #dcdcdc;
     border-radius: 50%;
     display: flex;
@@ -71,14 +83,13 @@
 }
 
 #file {
-    width: 70%;
-    max-width: 960px;
+    width: 50%;
     position: absolute;
-    margin-top: 27px;
+    margin-top: 35px;
 }
 
 .allLocations {
-    width: 100%;
+    width: 115%;
     display: flex;
     align-content: center;
     justify-content: space-between;
