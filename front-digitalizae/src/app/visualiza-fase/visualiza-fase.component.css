@@ -1,0 +1,105 @@
+.progressBar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    margin-top: 20px;
+}
+
+.progressbar {
+
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    counter-reset: step;
+    margin: 0;
+    width: 85%;
+
+}
+
+.progressbar::before,
+.progress {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #dcdcdc;
+    z-index: -1;
+}
+
+
+
+.progress {
+    background-color: rgb(76, 133, 219);
+    width: 0%;
+    transition: 0.3s;
+}
+
+
+
+.progress-step {
+    width: 70px;
+    height: 70px;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.progress-step::before {
+    counter-increment: step;
+    content: counter(step);
+}
+
+.progress-step::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: 0.85rem;
+    color: #666;
+
+}
+
+.progress-step-active {
+    background-color: rgb(76, 133, 219);
+    color: #f3f3f3;
+}
+
+#file {
+    width: 70%;
+    max-width: 960px;
+    position: absolute;
+    margin-top: 27px;
+}
+
+.allLocations {
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+
+.location {
+    width: 20%;
+    text-align: center;
+    padding: 20px 7px;
+}
+
+.location>h1 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: rgb(82, 82, 82);
+}
+
+.location>h2 {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+    color: rgb(82, 82, 82);
+}
