@@ -9,18 +9,17 @@
 
 body{
   display:flex;
-  height: 100vh;
+  height: 70%;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  background: rgb(231,231,231);
+  background: white;
 }
 
 .register-candidato{
-  max-width: 700px;
+  max-width: 760px;
   width: 100%;
   background: #fff;
-  padding: 20px 30px;
+  padding: 15px 25px;
   border-radius: 5px;
 }
 
@@ -127,6 +126,12 @@ form .button{
 form .button input:hover{
   background: rgb(69, 69, 69);
 }
+
+.register-candidato{
+  border: 1px solid #808080;
+}
+
+
 @media (max-width: 584px){
   .register-candidato{
     max-width: 100%;
