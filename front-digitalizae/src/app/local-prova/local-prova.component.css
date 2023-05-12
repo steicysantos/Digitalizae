@@ -13,9 +13,9 @@
     margin: 0 auto;
     border: none;
     align-self: flex-start;
-    margin-top: 2rem;
+    margin-top: 1rem;
     border-radius: 25px;
-    border: 3px solid #808080;
+    border: 1.5px solid #808080;
 }
 
 input {
@@ -41,42 +41,34 @@ input::placeholder {
 }
 
 .title-group {
-    text-align: center;
-    font-weight: bolder;
-    font-size: 30px;
-    color: rgb(88, 88, 88);
-    text-transform: uppercase;
-    margin-bottom: 3rem;
     margin-top: 1rem;
-}
-
-
-.btns-group {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1.5rem;
-    place-items: left;
-
-}
-
-.btn {
-    padding: 0.75rem;
-    display: block;
-    text-decoration: none;
-    background-color: rgb(76, 133, 219);
-    color: #f3f3f3;
-    font-weight: bold;
-    text-transform: uppercase;
+    align-self: center;
     text-align: center;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    transition: 0.3s;
-    outline: none;
-    width: 40%;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #295e89;
 }
 
-.btn:hover {
-    box-shadow: 0 0 0 2px #fff, 0 0 0 3px rgb(76, 133, 219);
+
+.btn{
+    width: 100%;
+    height: 50px;
+    background-color: #094780;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.btn>a{
+    color: white;
+    font-size: 22px;
+    outline: none;
+}
+
+.btn:hover{
+    background-color: #0D6ABF;
 }
 
 select {

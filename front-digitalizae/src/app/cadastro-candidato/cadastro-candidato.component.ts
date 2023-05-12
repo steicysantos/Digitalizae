@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import axios from "axios";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-candidato',
@@ -6,10 +8,46 @@ import { Component } from '@angular/core';
   styleUrls: ['./cadastro-candidato.component.css']
 })
 export class CadastroCandidatoComponent {
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void{
-    
+  ngOnInit(): void {
+
   }
 
+  CandidatoRegister() {
+    let nome = (document.getElementById("nome") as HTMLInputElement).value;
+    let nascimento = (document.getElementById("nascimento") as HTMLInputElement).value;
+    let telefone = (document.getElementById("telefone") as HTMLInputElement).value;
+    let email = (document.getElementById("email") as HTMLInputElement).value;
+    let login = (document.getElementById("login") as HTMLInputElement).value;
+    let senha = (document.getElementById("senha") as HTMLInputElement).value;
+
+    var data = JSON.stringify({
+      nome: nome,
+      nascimento: nascimento,
+      telefone: telefone,
+      email: email,
+      login: login,
+      senha: senha
+    });
+
+    var config = {
+      method: 'post',
+      url: '',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: data
+    };
+
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+        alert("Cadastro concluído!");
+      })
+      .catch(function (error) {
+        alert(error);
+        console.log(error);
+      });
+  }
 }

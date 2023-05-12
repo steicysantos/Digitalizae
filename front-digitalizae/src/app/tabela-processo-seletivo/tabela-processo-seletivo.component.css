@@ -2,7 +2,7 @@ body{
     display: flex;
     flex-direction: column;
     height: 100%;
-    background-color: rgb(246, 246, 246);
+    background-color: white;
     gap: 25px;
 }
 
@@ -11,15 +11,30 @@ body{
     align-self: center;
     text-align: center;
     font-size: 30px;
+    margin-top: 3rem;
+    color: #094780;
     font-weight: bold;
 }
 
 .container{
     max-height: 50%;
     border-radius: 20px;
-    background-color: rgb(255, 255, 255);
+}
+
+.container > h1{
+    font-size: 32px;
+    font-weight: 400;
+}
+
+th{
+    border: 1.5px solid #ccc;
 }
 
 td {
-    border: solid 1px rgb(220, 220, 220);
+    border: solid 1.5px #ccc;
+}
+
+table{
+    border: solid 1.5px #ccc;
+    
 }

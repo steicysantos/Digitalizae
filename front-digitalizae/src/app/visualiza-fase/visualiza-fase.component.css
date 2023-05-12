@@ -61,7 +61,7 @@
     position: absolute;
     top: calc(100% + 0.5rem);
     font-size: 0.85rem;
-    color: #666;
+    color: rgb(76, 133, 219);
 
 }
 
@@ -101,5 +101,8 @@
     margin-top: 15px;
     font-size: 0.9rem;
     line-height: 1.3rem;
-    color: rgb(82, 82, 82);
+}
+
+.container{
+    margin-top: 10rem;
 }

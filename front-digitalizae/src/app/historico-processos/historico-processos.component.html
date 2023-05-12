@@ -1,9 +1,10 @@
+<app-top-bar></app-top-bar>
 <body>
     <div class="title">
         Processos Seletivos Cadastrados
     </div>
     <div class="container">
-        <table class="table">
+        <table class="table" style="border: 1.5px solid #ccc;">
             <thead>
               <tr>
                 <th scope="col">Nº</th>
@@ -25,7 +26,7 @@
                 <td>{{i.qtdeMax}}</td>
                 <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="secondary"></td>
                 <td class="edit"><img src="../../assets/editing.png" alt=""  (click)="isVisible ? isVisible = false : isVisible = true"></td>
-                <td class="edit"><img src="../../assets/editing.png" alt=""  ></td>
+                <td class="setting"><img src="../../assets/setting.png" alt=""  ></td>
               </tr>
             </tbody>
           </table>

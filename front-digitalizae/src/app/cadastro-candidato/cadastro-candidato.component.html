@@ -1,52 +1,52 @@
 <app-top-bar></app-top-bar>
 
 <body>
-    <div class="register-candidato">
-        <div class="title">Cadastro candidato</div>
+    <div class="register-processo-seletivo">
+        <!-- <div class="title">Cadastrar candidato</div> -->
         <form action="#">
             <div class="user-details">
                 <div class="input-box">
                     <span class="details">Nome</span>
-                    <input type="text" id="Nome" placeholder="" required>
+                    <input type="text" id="nome" placeholder="" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Data de nascimento</span>
-                    <input type="date" id="date" placeholder="" required>
+                    <input type="text" id="nascimento" placeholder="" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Telefone</span>
-                    <input type="text" id="edv" placeholder="" required>
+                    <input type="number" id="telefone" placeholder="" required
+                        style="padding: 15px; width: 100%; height: 45px; outline: none; border-bottom-width: 2px; transition: all 0.3s ease; border-radius: 5px; border: 1px solid #ccc; ">
                 </div>
                 <div class="input-box">
                     <span class="details">Email</span>
-                    <input type="text" id="login" placeholder="" required>
+                    <input type="text" id="email" placeholder="" required
+                        style="padding: 15px; width: 100%; height: 45px; outline: none; border-bottom-width: 2px; transition: all 0.3s ease; border-radius: 5px; border: 1px solid #ccc; ">
                 </div>
-                <div class="column" style="display: flex; flex-direction: column;">
-                    <label for="details">Selecione o curso desejado:</label>
-                    <select name="curso" id="curso" style="margin-top: 1.5rem;">
-                        <option value="none">-</option>
-                        <option value="ads">Desenvolvimento de sistemas</option>
-                        <option value="mecatronica">Mecatrônica</option>
-                        <option value="mecanica">Mecânica</option>
+                <div class="input-box" style="width: 100%;">
+                    <span class="details">Curso desejado</span>
+                    <select class=" form-select" aria-label="Default select example"
+                        style="padding: 15px; width: 100%; height: 55px; outline: none; border-bottom-width: 2px; transition: all 0.3s ease; border-radius: 5px; border: 1px solid #ccc; ">
+                        <option selected>Selecione um curso</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
                     </select>
                 </div>
-
                 <div class="input-box">
                     <span class="details">Login</span>
-                    <input type="text" id="login" placeholder="" required>
+                    <input type="text" id="login" placeholder="" required
+                        style="padding: 15px; width: 100%; height: 45px; outline: none; border-bottom-width: 2px; transition: all 0.3s ease; border-radius: 5px; border: 1px solid #ccc; ">
                 </div>
                 <div class="input-box">
                     <span class="details">Senha</span>
-                    <input type="password" id="senha" placeholder="" required>
+                    <input type="password" id="senha" placeholder="" required
+                        style="padding: 15px; width: 100%; height: 45px; outline: none; border-bottom-width: 2px; transition: all 0.3s ease; border-radius: 5px; border: 1px solid #ccc; ">
                 </div>
-                <div class="input-box">
-                    <span class="details" for="type" style="margin-bottom: 1.4rem;">O usuário está ativo?</span>
-                    <input type="radio" name="type" value="1" required>Sim
-                    <input type="radio" name="type" value="2" required>Não
-                </div>
-
             </div>
-            <button class="btn-login">Cadastrar</button>
+            <div class="btns-group" id="cadastro-btn">
+                <a href="#" class="btn-login" (click)="CandidatoRegister()">Finalizar inscrição</a>
+            </div>
         </form>
     </div>
 </body>
