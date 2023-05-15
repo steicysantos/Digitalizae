@@ -1,20 +1,45 @@
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: white;
+    gap: 25px;
+}
+
+.title{
+    width: 100%;
+    align-self: center;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 3rem;
+    color: #094780;
+    font-weight: bold;
+}
+
+.container{
+    max-height: 50%;
+    border-radius: 20px;
+}
+
+.container > h1{
+    font-size: 32px;
+    font-weight: 400;
+}
+
+th{
+    border: 1.5px solid #ccc;
+}
+
+td {
+    border: solid 1.5px #ccc;
+}
+
+table{
+    border: solid 1.5px #ccc;
+    
+}
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans:wght@400;700&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Noto Sans', sans-serif;
-}
-
-body{
-  display:flex;
-  height: 80%;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  background: #fff;
-}
 
 .register-processo-seletivo .title{
   font-size: 25px;
@@ -87,23 +112,23 @@ form .type-details .category{
 }
 
 
-.btn{
-  width: 75%;
+.btn-login{
+  width: 25%;
   padding: 8px 0px;
   margin-top: 15px;
+  margin-left: 75%;
   border: none;
   border-radius: 8px;
   outline: none;
-  display: flex;
+  text-transform: uppercase;
+  justify-self: center;
   align-items: center;
-  justify-content: center;
-  font-weight: 500;
+  font-weight: 800;
   font-size: 20px;
   letter-spacing: 0.5px;
   color: rgb(255, 255, 255);
   background: #295e89;
-  cursor: pointer;
-  margin-left: 12.5%;
+  cursor: pointer;  
 }
 
 input[type="radio"]{

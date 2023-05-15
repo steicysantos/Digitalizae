@@ -1,0 +1,27 @@
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h2{
+    margin-top: 3rem;
+}
+
+.group-cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin-top: 3rem;
+    gap: 3rem;
+}
+
+.card{
+    width: 350px;
+}
+
+.card-header{
+    width: 100%;
+    text-align: center;
+}

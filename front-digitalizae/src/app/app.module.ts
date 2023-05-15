@@ -17,6 +17,9 @@ import { ProgressoUsuarioComponent } from './progresso-usuario/progresso-usuario
 import { PrincipalAdmComponent } from './principal-adm/principal-adm.component';
 import { ListaProcessosComponent } from './lista-processos/lista-processos.component';
 import { AvaliarCandidatosComponent } from './avaliar-candidatos/avaliar-candidatos.component';
+import { TabelaCandidatosComponent } from './tabela-candidatos/tabela-candidatos.component';
+import { TopBarCandidatoComponent } from './top-bar-candidato/top-bar-candidato.component';
+import { TopBarLoginComponent } from './top-bar-login/top-bar-login.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { AvaliarCandidatosComponent } from './avaliar-candidatos/avaliar-candida
     ProgressoUsuarioComponent,
     PrincipalAdmComponent,
     ListaProcessosComponent,
-    AvaliarCandidatosComponent
+    AvaliarCandidatosComponent,
+    TabelaCandidatosComponent,
+    TopBarCandidatoComponent,
+    TopBarLoginComponent
   ],
   imports: [
     BrowserModule,

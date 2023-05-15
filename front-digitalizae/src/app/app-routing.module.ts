@@ -13,6 +13,7 @@ import { ProgressoUsuarioComponent } from './progresso-usuario/progresso-usuario
 import { PrincipalAdmComponent } from './principal-adm/principal-adm.component';
 import { ListaProcessosComponent } from './lista-processos/lista-processos.component';
 import { AvaliarCandidatosComponent } from './avaliar-candidatos/avaliar-candidatos.component';
+import { TabelaCandidatosComponent } from './tabela-candidatos/tabela-candidatos.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'cadastro-candidato', component: CadastroCandidatoComponent},
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'adm', component:PrincipalAdmComponent},
   { path: 'processos', component:ListaProcessosComponent},
   { path: 'avaliar-candidatos', component:AvaliarCandidatosComponent},
-  
+  { path: 'tabela-candidatos', component:TabelaCandidatosComponent},
+
   
 ];
 

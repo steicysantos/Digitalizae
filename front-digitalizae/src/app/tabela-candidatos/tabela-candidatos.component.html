@@ -1,0 +1,74 @@
+<app-top-bar></app-top-bar>
+
+<body>
+    <div class="container-title" style="display: flex; align-items: center; justify-content: center;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-arrow-left"
+            viewBox="0 0 16 16" style="cursor: pointer; margin-left: 20px;" [routerLink]="['/avaliar-candidatos']">
+            <path fill-rule="evenodd"
+                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+        </svg>
+        <div class="title">
+            *Nome do Processo Seletivo*
+        </div>
+    </div>
+    <div class="container" style="display: flex; flex-direction: column;">
+        <h1 style="margin-bottom: 2rem;">Candidatos</h1>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Data de nascimento</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nathan Ansay Cordeiro</td>
+                    <td>nathancordeiro@gmail.com</td>
+                    <td>18/03/2003</td>
+                    <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="secondary"></td>
+                </tr>
+                <tr>
+                    <td>Steicy Mayara dos Santos</td>
+                    <td>steicymsantos@gmail.com</td>
+                    <td>20/02/2002</td>
+                    <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="secondary"></td>
+                </tr>
+                <tr>
+                    <td>Carlos Costa</td>
+                    <td>carcos@gmail.com</td>
+                    <td>15/06/2005</td>
+                    <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="secondary"></td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#candidatos-aprovados" style="width: 25%;">Aprovar candidatos</a>
+    </div>
+</body>
+
+<div class="modal fade" id="candidatos-aprovados" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Informações sobre a etapa:</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <p>Nathan Cordeiro Ansay</p>
+                </div>
+                <div>
+                    <p>Steicy Mayara dos Santos</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-second" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Aprovar</button>
+            </div>
+        </div>
+    </div>
+</div>

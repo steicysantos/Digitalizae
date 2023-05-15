@@ -2,13 +2,30 @@
 
 <body>
     <h2>Processos seletivos ativos</h2>
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            <a href="#" class="card-link">Avaliar candidatos</a>
+    <div class="group-cards" >
+        <div class="card" style="display: flex; align-items: center; justify-content: center;">
+            <h5 class="card-header">Desenvolvimento de Sistemas</h5>
+            <div class="card-body">
+                <p class="card-text" style="text-align: center;">20/02/2002</p>
+                <a href="#" class="btn btn-primary" [routerLink]="['/tabela-candidatos']">Avaliar candidatos</a>
+            </div>
         </div>
+        <div class="card" style="display: flex; align-items: center; justify-content: center;">
+            <h5 class="card-header" style="width: 100%; text-align: center;">Manufatura</h5>
+            <div class="card-body">
+                <p class="card-text" style="text-align: center;">20/02/2002</p>
+                <a href="#" class="btn btn-primary">Avaliar candidatos</a>
+            </div>
+        </div>
+        <div class="card" style="display: flex; align-items: center; justify-content: center;">
+            <h5 class="card-header">Desenvolvimento de Sistemas</h5>
+            <div class="card-body">
+                <p class="card-text" style="text-align: center;">20/02/2002</p>
+                <a href="#" class="btn btn-primary">Avaliar candidatos</a>
+            </div>
+        </div>
+
     </div>
+
+
 </body>
