@@ -21,15 +21,19 @@ export class CadastroCandidatoComponent {
     let email = (document.getElementById("email") as HTMLInputElement).value;
     let login = (document.getElementById("login") as HTMLInputElement).value;
     let senha = (document.getElementById("senha") as HTMLInputElement).value;
+    let CPF = (document.getElementById("CPF") as HTMLInputElement).value;
 
     var data = JSON.stringify({
-      nome: nome,
-      nascimento: nascimento,
-      telefone: telefone,
-      email: email,
-      login: login,
-      senha: senha
+      CPF: CPF,
+      Login: login,
+      Senha: senha,
+      Nome: nome,
+      DataNascimento: nascimento,
+      Telefone: telefone,
+      Email: email,
     });
+
+    console.log(data)
 
     var config = {
       method: 'post',
