@@ -96,23 +96,24 @@ form .type-details .category{
 }
 
 
-.btn-login{
-  width: 25%;
+.btn{
+  width: 75%;
   padding: 8px 0px;
   margin-top: 15px;
-  margin-left: 75%;
   border: none;
   border-radius: 8px;
   outline: none;
   text-transform: uppercase;
-  justify-self: center;
+  display: flex;
   align-items: center;
-  font-weight: 800;
+  justify-content: center;
+  font-weight: 500;
   font-size: 20px;
   letter-spacing: 0.5px;
   color: rgb(255, 255, 255);
   background: #295e89;
-  cursor: pointer;  
+  cursor: pointer;
+  margin-left: 12.5%;
 }
 
 input[type="radio"]{

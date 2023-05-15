@@ -7,15 +7,15 @@
             <div class="user-details">
                 <div class="input-box">
                     <span class="details">Curso</span>
-                    <input type="text" id="Nome" placeholder="" required>
+                    <input type="text" id="curso" placeholder="" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Início processo seletivo</span>
-                    <input type="date" id="date" placeholder="" required>
+                    <input type="date" id="inicio" placeholder="" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Fim processo seletivo</span>
-                    <input type="date" id="date" placeholder="" required>
+                    <input type="date" id="fim" placeholder="" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Quantidade máxima de candidatos</span>
@@ -27,7 +27,9 @@
                     <input type="radio" name="type" value="2" required>Não
                 </div>
             </div>
-            <button class="btn-login">Cadastrar</button>
+            <div class="btns-group" id="cadastro-btn">
+                <a href="#" class="btn" (click)="ProcessoRegister()">Cadastrar processo seletivo</a>
+            </div>
         </form>
     </div>
 </body>
