@@ -33,7 +33,7 @@ export class CadastroCandidatoComponent {
 
     var config = {
       method: 'post',
-      url: '',
+      url: 'https://localhost:7049/Candidato/register',
       headers: {
         'Content-Type': 'application/json'
       },

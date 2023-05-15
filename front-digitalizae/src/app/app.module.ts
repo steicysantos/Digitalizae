@@ -14,6 +14,7 @@ import { VisualizaFaseComponent } from './visualiza-fase/visualiza-fase.componen
 import { LocalProvaComponent } from './local-prova/local-prova.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProgressoUsuarioComponent } from './progresso-usuario/progresso-usuario.component';
+import { PrincipalAdmComponent } from './principal-adm/principal-adm.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ProgressoUsuarioComponent } from './progresso-usuario/progresso-usuario
     VisualizaFaseComponent,
     LocalProvaComponent,
     TopBarComponent,
-    ProgressoUsuarioComponent
+    ProgressoUsuarioComponent,
+    PrincipalAdmComponent
   ],
   imports: [
     BrowserModule,
