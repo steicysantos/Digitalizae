@@ -6,14 +6,12 @@ import { CadastroProcessoSeletivoComponent } from './cadastro-processo-seletivo/
 import { HistoricoProcessosComponent } from './historico-processos/historico-processos.component';
 import { VisualizaFaseComponent } from './visualiza-fase/visualiza-fase.component';
 import { TabelaProcessoSeletivoComponent } from './tabela-processo-seletivo/tabela-processo-seletivo.component';
-import { CadastroNovasFasesComponent } from './cadastro-novas-fases/cadastro-novas-fases.component';
 import { PerfilCandidatoComponent } from './perfil-candidato/perfil-candidato.component';
-import { LocalProvaComponent } from './local-prova/local-prova.component';
-import { ProgressoUsuarioComponent } from './progresso-usuario/progresso-usuario.component';
-import { PrincipalAdmComponent } from './principal-adm/principal-adm.component';
-import { ListaProcessosComponent } from './lista-processos/lista-processos.component';
 import { AvaliarCandidatosComponent } from './avaliar-candidatos/avaliar-candidatos.component';
 import { TabelaCandidatosComponent } from './tabela-candidatos/tabela-candidatos.component';
+import { AdmComponent } from './adm/adm.component';
+import { ProcessosComponent } from './processos/processos.component';
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'cadastro-candidato', component: CadastroCandidatoComponent},
@@ -21,15 +19,11 @@ const routes: Routes = [
   { path: 'historico-processos', component: HistoricoProcessosComponent},
   { path: 'visualiza-fase', component:VisualizaFaseComponent},
   { path: 'tabela-processo-seletivo', component:TabelaProcessoSeletivoComponent},
-  { path: 'cadastro-novas-fases', component:CadastroNovasFasesComponent},
   { path: 'perfil-candidato', component:PerfilCandidatoComponent},
-  { path: 'local-prova', component:LocalProvaComponent},
-  { path: 'local-prova', component:LocalProvaComponent},
-  { path: 'progresso-usuario', component:ProgressoUsuarioComponent},
-  { path: 'adm', component:PrincipalAdmComponent},
-  { path: 'processos', component:ListaProcessosComponent},
   { path: 'avaliar-candidatos', component:AvaliarCandidatosComponent},
   { path: 'tabela-candidatos', component:TabelaCandidatosComponent},
+  { path: 'adm', component:AdmComponent},
+  { path: 'processos', component:ProcessosComponent},
 
   
 ];

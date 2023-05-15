@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { LocalProvaComponent } from './local-prova.component';
 
-describe('LocalProvaComponent', () => {
-  let component: LocalProvaComponent;
-  let fixture: ComponentFixture<LocalProvaComponent>;
+import { AdmComponent } from './adm.component';
+
+describe('AdmComponent', () => {
+  let component: AdmComponent;
+  let fixture: ComponentFixture<AdmComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LocalProvaComponent ]
+      declarations: [ AdmComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LocalProvaComponent);
+    fixture = TestBed.createComponent(AdmComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

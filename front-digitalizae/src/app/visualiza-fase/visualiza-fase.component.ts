@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Candidato } from '../Classes';
+import { Candidato, Fase } from '../Classes';
 import axios from "axios";
 @Component({
   selector: 'app-visualiza-fase',
@@ -7,7 +7,7 @@ import axios from "axios";
   styleUrls: ['./visualiza-fase.component.css']
 })
 export class VisualizaFaseComponent {
-  progresso : Array<number> =[]
+  progresso : Array<Number> =[]
   candidato : Candidato = {
     id : 1,
     nome: "string",
@@ -22,6 +22,11 @@ export class VisualizaFaseComponent {
   }
 
   ngOnInit(): void {
+
+    this.progresso.push(1)
+    this.progresso.push(1)
+    this.progresso.push(1)
+    this.progresso.push(1)
   //   var id = "4"
   //   var config = {
   //     method: 'get',
