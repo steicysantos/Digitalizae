@@ -15,6 +15,8 @@ import { LocalProvaComponent } from './local-prova/local-prova.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProgressoUsuarioComponent } from './progresso-usuario/progresso-usuario.component';
 import { PrincipalAdmComponent } from './principal-adm/principal-adm.component';
+import { ListaProcessosComponent } from './lista-processos/lista-processos.component';
+import { AvaliarCandidatosComponent } from './avaliar-candidatos/avaliar-candidatos.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { PrincipalAdmComponent } from './principal-adm/principal-adm.component';
     LocalProvaComponent,
     TopBarComponent,
     ProgressoUsuarioComponent,
-    PrincipalAdmComponent
+    PrincipalAdmComponent,
+    ListaProcessosComponent,
+    AvaliarCandidatosComponent
   ],
   imports: [
     BrowserModule,

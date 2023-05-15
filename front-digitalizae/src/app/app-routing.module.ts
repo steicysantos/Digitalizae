@@ -10,6 +10,9 @@ import { CadastroNovasFasesComponent } from './cadastro-novas-fases/cadastro-nov
 import { PerfilCandidatoComponent } from './perfil-candidato/perfil-candidato.component';
 import { LocalProvaComponent } from './local-prova/local-prova.component';
 import { ProgressoUsuarioComponent } from './progresso-usuario/progresso-usuario.component';
+import { PrincipalAdmComponent } from './principal-adm/principal-adm.component';
+import { ListaProcessosComponent } from './lista-processos/lista-processos.component';
+import { AvaliarCandidatosComponent } from './avaliar-candidatos/avaliar-candidatos.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'cadastro-candidato', component: CadastroCandidatoComponent},
@@ -22,6 +25,10 @@ const routes: Routes = [
   { path: 'local-prova', component:LocalProvaComponent},
   { path: 'local-prova', component:LocalProvaComponent},
   { path: 'progresso-usuario', component:ProgressoUsuarioComponent},
+  { path: 'adm', component:PrincipalAdmComponent},
+  { path: 'processos', component:ListaProcessosComponent},
+  { path: 'avaliar-candidatos', component:AvaliarCandidatosComponent},
+  
   
 ];
 

@@ -1,1 +1,24 @@
-<p>principal-adm works!</p>
+<app-top-bar></app-top-bar>
+
+<body>
+    <div class="grade-card">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="../../assets/Criar processo.png" alt="Card image cap" style="max-height: 100%;">
+            <div class="card-body">
+                <a href="#" class="btn btn-primary" [routerLink]="['/cadastro-processo-seletivo']">Criar processo seletivo</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="../../assets/AvaliarCandidatos.png" alt="Card image cap">
+            <div class="card-body">
+                <a href="#" class="btn btn-primary" [routerLink]="['/avaliar-candidatos']">Avaliar candidatos</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="../../assets/FasesProcesso.png" alt="Card image cap">
+            <div class="card-body">
+                <a href="#" class="btn btn-primary" [routerLink]="['/tabela-processo-seletivo']">Meus processos</a>
+            </div>
+        </div>
+    </div>
+</body>
