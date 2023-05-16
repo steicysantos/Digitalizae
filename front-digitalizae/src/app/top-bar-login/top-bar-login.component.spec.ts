@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { LocalProvaComponent } from './local-prova.component';
 
-describe('LocalProvaComponent', () => {
-  let component: LocalProvaComponent;
-  let fixture: ComponentFixture<LocalProvaComponent>;
+import { TopBarLoginComponent } from './top-bar-login.component';
+
+describe('TopBarLoginComponent', () => {
+  let component: TopBarLoginComponent;
+  let fixture: ComponentFixture<TopBarLoginComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LocalProvaComponent ]
+      declarations: [ TopBarLoginComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LocalProvaComponent);
+    fixture = TestBed.createComponent(TopBarLoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

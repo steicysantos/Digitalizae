@@ -1,0 +1,40 @@
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: white;
+    gap: 25px;
+}
+
+.title{
+    width: 100%;
+    align-self: center;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 3rem;
+    color: #094780;
+    font-weight: bold;
+}
+
+.container{
+    max-height: 50%;
+    border-radius: 20px;
+}
+
+.container > h1{
+    font-size: 32px;
+    font-weight: 400;
+}
+
+th{
+    border: 1.5px solid #ccc;
+}
+
+td {
+    border: solid 1.5px #ccc;
+}
+
+table{
+    border: solid 1.5px #ccc;
+    
+}

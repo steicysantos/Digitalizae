@@ -1,4 +1,4 @@
-<app-top-bar></app-top-bar>
+<app-top-bar-candidato></app-top-bar-candidato>
 <div class="container">
     <div class="left-container">
         <div class="user">
@@ -6,8 +6,8 @@
             <h1>{{candidato.nome}}</h1>
             <p>{{candidato.nomeProcesso}}</p>
         </div>
-        <div class="btn" id="">
-            <a href="#" [routerLink]="['/visualiza-fase']">Resultado</a>
+        <div class="btn" id="" [routerLink]="['/visualiza-fase']">
+            <a href="#" style="outline: none;">Acompanhar processo</a>
         </div>
     </div>
     <div class="right-container">

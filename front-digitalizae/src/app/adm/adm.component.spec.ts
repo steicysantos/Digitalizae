@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PrincipalAdmComponent } from './principal-adm.component';
+import { AdmComponent } from './adm.component';
 
-describe('PrincipalAdmComponent', () => {
-  let component: PrincipalAdmComponent;
-  let fixture: ComponentFixture<PrincipalAdmComponent>;
+describe('AdmComponent', () => {
+  let component: AdmComponent;
+  let fixture: ComponentFixture<AdmComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PrincipalAdmComponent ]
+      declarations: [ AdmComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PrincipalAdmComponent);
+    fixture = TestBed.createComponent(AdmComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

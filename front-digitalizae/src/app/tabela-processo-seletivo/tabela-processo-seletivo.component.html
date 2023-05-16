@@ -1,7 +1,15 @@
 <app-top-bar></app-top-bar>
+
 <body>
-  <div class="title">
-    *Nome do Processo Seletivo*
+  <div class="container-title" style="display: flex; align-items: center; justify-content: center;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-arrow-left"
+      viewBox="0 0 16 16" style="cursor: pointer; margin-left: 20px;" [routerLink]="['/processos']">
+      <path fill-rule="evenodd"
+        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+    </svg>
+    <div class="title">
+      *Nome do Processo Seletivo*
+    </div>
   </div>
   <div class="container">
     <h1>Fases</h1>
@@ -23,28 +31,62 @@
         </tr>
       </tbody>
     </table>
-    
-  </div>
-  <div class="container">
-    <h1>Candidatos</h1>
-    <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">Nome</th>
-            <th scope="col">Email</th>
-            <th scope="col">Data de nascimento</th>
-            <th>Aprovado</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Nathan Ansay Cordeiro</td>
-            <td>nathancordeiro@gmail.com</td>
-            <td>18/03/2003</td>
-            <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="secondary"></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="mais" style="display: flex; justify-content: flex-end;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#094780" class="bi bi-plus-circle-fill"
+        viewBox="0 0 16 16" data-toggle="modal" data-target="#cadastrar-fase" style="cursor: pointer;">
+        <path
+          d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+      </svg>
+    </div>
+
   </div>
 </body>
 
+<!-- Modal -->
+<div class="modal fade" id="cadastrar-fase" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cadastrar fase</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="register-processo-seletivo">
+          <form action="#">
+            <div class="user-details">
+              <div class="input-box">
+                <span class="details">Tipo</span>
+                <input type="text" id="Nome" placeholder="" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Data da fase</span>
+                <input type="date" id="date" placeholder="" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Número de candidatos</span>
+                <input type="number" id="number" placeholder="" required
+                  style="padding: 15px; width: 100%; height: 45px; outline: none; border-bottom-width: 2px; transition: all 0.3s ease; border-radius: 5px; border: 1px solid #ccc; ">
+              </div>
+
+              <div class="input-box">
+                <span class="details" for="type" style="margin-bottom: 1.4rem;">Formato</span>
+                <input type="radio" name="type" value="1" required>Online
+                <input type="radio" name="type" value="2" required>Presencial
+              </div>
+              <div class="input-box" style="width: 100%;">
+                <span class="details">Descrição</span>
+                <input type="text" id="Nome" placeholder="" required style="height: 100px;">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cadastrar</button>
+      </div>
+    </div>
+  </div>
+</div>
