@@ -11,14 +11,15 @@ export interface Processo{
 export interface Candidato{
     id : number,
     nome: string,
-    dataNascimento: Date,
-    telefone : string,
-    email : string,
-    nomeProcesso : string,
-    curriculo : string,
+    CPF: string,
     login: string,
     senha: string,
+    dataNascimento: Date,
+    telefone : string,
+    nomeProcesso : string,
+    caminhoFt : string,
     ativo : boolean,
+    email : string,
 }
 
 export interface Fase {

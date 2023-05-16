@@ -15,6 +15,7 @@ export class CadastroCandidatoComponent {
   }
 
   CandidatoRegister() {
+    
     let nome = (document.getElementById("nome") as HTMLInputElement).value;
     let nascimento = (document.getElementById("nascimento") as HTMLInputElement).value;
     let telefone = (document.getElementById("telefone") as HTMLInputElement).value;

@@ -14,7 +14,8 @@ export class PerfilCandidatoComponent {
     dataNascimento: new Date("1900-01-01"),
     telefone : "string",
     email : "string",
-    curriculo : "string",
+    caminhoFt : "string",
+    CPF : "string",
     nomeProcesso : "string",
     login: "string",
     senha: "string",
@@ -22,10 +23,10 @@ export class PerfilCandidatoComponent {
   }
   
   ngOnInit(): void {
-    var id = "4"
+    var id = localStorage.getItem("idcandidato")
     var config = {
       method: 'get',
-      url: 'http://localhost:5164/CandidatoxProcesso/GetWithInfo/'+id,
+      url: 'https://localhost:7049/Candidato/Perfil/'+id,
       headers: { },
     };
 
@@ -33,7 +34,6 @@ export class PerfilCandidatoComponent {
     axios(config)
       .then(function (response) {
         instance.candidato = response.data
-        console.log(response.data)
       })
       .catch(function (error) {
         console.log(error);
