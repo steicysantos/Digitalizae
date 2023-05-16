@@ -11,6 +11,7 @@ import { AvaliarCandidatosComponent } from './avaliar-candidatos/avaliar-candida
 import { TabelaCandidatosComponent } from './tabela-candidatos/tabela-candidatos.component';
 import { AdmComponent } from './adm/adm.component';
 import { ProcessosComponent } from './processos/processos.component';
+import { EditarDadosComponent } from './editar-dados/editar-dados.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
@@ -24,7 +25,7 @@ const routes: Routes = [
   { path: 'tabela-candidatos', component:TabelaCandidatosComponent},
   { path: 'adm', component:AdmComponent},
   { path: 'processos', component:ProcessosComponent},
-
+  { path: 'editar-dados', component:EditarDadosComponent},
   
 ];
 
