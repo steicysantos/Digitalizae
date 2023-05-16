@@ -17,6 +17,7 @@ import { TopBarCandidatoComponent } from './top-bar-candidato/top-bar-candidato.
 import { TopBarLoginComponent } from './top-bar-login/top-bar-login.component';
 import { AdmComponent } from './adm/adm.component';
 import { ProcessosComponent } from './processos/processos.component';
+import { EditarDadosComponent } from './editar-dados/editar-dados.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ProcessosComponent } from './processos/processos.component';
     TopBarCandidatoComponent,
     TopBarLoginComponent,
     AdmComponent,
-    ProcessosComponent
+    ProcessosComponent,
+    EditarDadosComponent
   ],
   imports: [
     BrowserModule,

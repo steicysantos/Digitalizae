@@ -6,9 +6,11 @@
             <h1>{{candidato.nome}}</h1>
             <p>{{candidato.nomeProcesso}}</p>
         </div>
-        <div class="btn" id="" [routerLink]="['/visualiza-fase']">
+        <!-- <div class="btn" id="" [routerLink]="['/visualiza-fase']">
             <a href="#" style="outline: none;">Acompanhar processo</a>
-        </div>
+        </div> -->
+        <a href="#" class="btn" [routerLink]="['/visualiza-fase']" style="margin-top: -2rem;">Acompanhar processo</a>
+        <a href="#" class="btn" [routerLink]="['/editar-dados']">Editar dados</a>
     </div>
     <div class="right-container">
         <div class="info" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">

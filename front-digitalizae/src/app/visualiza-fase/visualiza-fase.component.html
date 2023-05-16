@@ -1,102 +1,112 @@
 <app-top-bar-candidato></app-top-bar-candidato>
 
-<div class="container">
-    <div class="progressoUsuario">
-        <div class="progressBar">
-            <progress id="file" value="{{ progresso.length - 1 }}" max="4"></progress>
-            <div class="progressbar">
-                <div class="progress-step" [ngClass]="{ 'progress-step-active': progresso.length >  0 }" data-title="" data-toggle="modal" data-target="#exampleModal">
+<body>
+    <h2>Acompanhe sua jornada:</h2>
+
+    <div class="container">
+        <div class="progressoUsuario">
+            <div class="progressBar">
+                <progress id="file" value="{{ progresso.length - 1 }}" max="4"></progress>
+                <div class="progressbar">
+                    <div class="progress-step" [ngClass]="{ 'progress-step-active': progresso.length >  0 }"
+                        data-title="" data-toggle="modal" data-target="#exampleModal">
+                    </div>
+                    <div class="progress-step" [ngClass]="{ 'progress-step-active': progresso.length >  1 }"
+                        data-title="" data-toggle="modal" data-target="#exampleModal">
+                    </div>
+                    <div class="progress-step" [ngClass]="{ 'progress-step-active': progresso.length  >  2 }"
+                        data-title="" data-toggle="modal" data-target="#exampleModal">
+                    </div>
+                    <div class="progress-step" [ngClass]="{ 'progress-step-active': progresso.length >  3 }"
+                        data-title="" data-toggle="modal" data-target="#exampleModal">
+                    </div>
+                    <div class="progress-step" [ngClass]="{ 'progress-step-active': progresso.length >  4 }"
+                        data-title="" data-toggle="modal" data-target="#exampleModal">
+                    </div>
                 </div>
-                <div class="progress-step" [ngClass]="{ 'progress-step-active': progresso.length >  1 }" data-title="" data-toggle="modal" data-target="#exampleModal">
-                </div>
-                <div class="progress-step" [ngClass]="{ 'progress-step-active': progresso.length  >  2 }" data-title="" data-toggle="modal" data-target="#exampleModal">
-                </div>
-                <div class="progress-step" [ngClass]="{ 'progress-step-active': progresso.length >  3 }" data-title="" data-toggle="modal" data-target="#exampleModal">
-                </div>
-                <div class="progress-step" [ngClass]="{ 'progress-step-active': progresso.length >  4 }" data-title="" data-toggle="modal" data-target="#exampleModal">
+
+                <div class="allLocations">
+                    <div class="location">
+                        <h1 *ngIf="progresso.length">
+                            {{ progresso[0]}}
+                        </h1>
+                        <h2 *ngIf="progresso.length > 0">
+                            {{ progresso[0]}}<br />
+                            {{ progresso[0]}}
+                        </h2>
+                    </div>
+                    <div class="location">
+                        <h1 *ngIf="progresso.length > 1">
+                            {{ progresso[1]}}
+                        </h1>
+                        <h2 *ngIf="progresso.length > 1">
+                            {{ progresso[1]}}<br />
+                            {{ progresso[1]}}
+                        </h2>
+                    </div>
+                    <div class="location">
+                        <h1 *ngIf="progresso.length > 2">
+                            {{ progresso[2]}}
+                        </h1>
+                        <h2 *ngIf="progresso.length > 2">
+                            {{ progresso[2]}}<br />
+                            {{ progresso[2]}}
+                        </h2>
+                    </div>
+                    <div class="location">
+                        <h1 *ngIf="progresso.length > 3">
+                            {{ progresso[3]}}
+                        </h1>
+                        <h2 *ngIf="progresso.length > 3">
+                            {{ progresso[3]}}<br />
+                            {{ progresso[3]}}
+                        </h2>
+                    </div>
+                    <div class="location">
+                        <h1 *ngIf="progresso.length > 4">
+                            {{ progresso[4]}}
+                        </h1>
+                        <h2 *ngIf="progresso.length > 4">
+                            {{ progresso[4]}}<br />
+                            {{ progresso[4]}}
+                        </h2>
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
+</body>
 
-            <div class="allLocations">
-                <div class="location">
-                    <h1 *ngIf="progresso.length">
-                        {{ progresso[0]}}
-                    </h1>
-                    <h2 *ngIf="progresso.length > 0">
-                        {{ progresso[0]}}<br />
-                        {{ progresso[0]}}
-                    </h2>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Informações sobre a etapa:</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <p>Local: </p>
+                    <!-- <p>Local: {{fases[indexFase].local}}</p> -->
                 </div>
-                <div class="location">
-                    <h1 *ngIf="progresso.length > 1">
-                        {{ progresso[1]}}
-                    </h1>
-                    <h2 *ngIf="progresso.length > 1">
-                        {{ progresso[1]}}<br />
-                        {{ progresso[1]}}
-                    </h2>
+                <div class="input-group">
+                    <!-- <p>Descrição: {{fases[indexFase].descricao}}</p> -->
+                    <p>Descrição: </p>
                 </div>
-                <div class="location">
-                    <h1 *ngIf="progresso.length > 2">
-                        {{ progresso[2]}}
-                    </h1>
-                    <h2 *ngIf="progresso.length > 2">
-                        {{ progresso[2]}}<br />
-                        {{ progresso[2]}}
-                    </h2>
+                <div class="input-group">
+                    <p>CEP: </p>
                 </div>
-                <div class="location">
-                    <h1 *ngIf="progresso.length > 3">
-                        {{ progresso[3]}}
-                    </h1>
-                    <h2 *ngIf="progresso.length > 3">
-                        {{ progresso[3]}}<br />
-                        {{ progresso[3]}}
-                    </h2>
+                <div class="input-group">
+                    <p>Horário: </p>
                 </div>
-                <div class="location">
-                    <h1 *ngIf="progresso.length > 4">
-                        {{ progresso[4]}}
-                    </h1>
-                    <h2 *ngIf="progresso.length > 4">
-                        {{ progresso[4]}}<br />
-                        {{ progresso[4]}}
-                    </h2>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
             </div>
         </div>
     </div>
 </div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Informações sobre a etapa:</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <div class="input-group">
-                <p>Local: </p>
-                <!-- <p>Local: {{fases[indexFase].local}}</p> -->
-            </div>
-            <div class="input-group">
-                <!-- <p>Descrição: {{fases[indexFase].descricao}}</p> -->
-                <p>Descrição: </p>
-            </div>
-            <div class="input-group">
-                <p>CEP: </p>
-            </div>
-            <div class="input-group">
-                <p>Horário: </p>
-            </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
-        </div>
-      </div>
-    </div>
-  </div>
