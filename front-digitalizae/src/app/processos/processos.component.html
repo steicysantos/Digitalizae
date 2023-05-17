@@ -1,29 +1,140 @@
 <app-top-bar></app-top-bar>
+
 <body>
-    <div class="title">
-        Processos seletivos
-      </div>
-      <div class="container">
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">Curso</th>
-              <th scope="col">Data início</th>
-              <th scope="col">Data fim</th>
-              <th scope="col">Nº de candidatos</th>
-              <th scope="col">Editar</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Desenvolvimento de sistemas</td>
-              <td>20/02/2002</td>
-              <td>18/03/2003</td>
-              <td>18</td>
-              <td><a href="#" [routerLink]="['/tabela-processo-seletivo']"><img src="../../assets/editing.png" style="width: 30px;"alt="" srcset=""></a></td>
-            </tr>
-          </tbody>
-        </table>
-        
-      </div>
+  <div class="title">
+    Processos seletivos
+  </div>
+  <div class="container">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Curso</th>
+          <th scope="col">Data início</th>
+          <th scope="col">Data fim</th>
+          <th scope="col">Nº de candidatos</th>
+          <th scope="col">Editar</th>
+          <th scope="col">Visualiza</th>
+          <th scope="col">Excluir</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Desenvolvimento de sistemas</td>
+          <td>20/02/2002</td>
+          <td>18/03/2003</td>
+          <td>18</td>
+          <td><a href="#" data-toggle="modal" data-target="#edit"><img src="../../assets/editing.png"
+                style="width: 30px;" alt="" srcset=""></a></td>
+          <td><a href="#" [routerLink]="['/tabela-processo-seletivo']"><img src="../../assets/eye.png"
+                style="width: 30px;" alt="" srcset=""></a></td>
+          <td><a href="#" data-toggle="modal" data-target="#delete"><img src="../../assets/trash.png"
+                style="width: 30px;" alt="" srcset=""></a></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
 </body>
+
+<!-- Modal edit -->
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Informações sobre a etapa:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="register-processo-seletivo">
+          <form action="#">
+            <div class="user-details">
+              <div class="input-box">
+                <span class="details">Curso</span>
+                <input type="text" id="curso" placeholder="" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Início processo seletivo</span>
+                <input type="date" id="inicio" placeholder="" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Fim processo seletivo</span>
+                <input type="date" id="fim" placeholder="" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Quantidade máxima de candidatos</span>
+                <input type="number" id="numcandidatos" placeholder="" required
+                  style="padding: 15px; width: 100%; height: 45px; outline: none; border-bottom-width: 2px; transition: all 0.3s ease; border-radius: 5px; border: 1px solid #ccc; ">
+              </div>
+              <div class="input-box">
+                <span class="details" for="type" style="margin-bottom: 1.4rem;">O processo seletivo esta ativo?</span>
+                <input type="radio" name="type" value="1" required>Sim
+                <input type="radio" name="type" value="2" required>Não
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-second" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Alterar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal edit -->
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Informações sobre a etapa:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group">
+          <p>Local: </p>
+          <!-- <p>Local: {{fases[indexFase].local}}</p> -->
+        </div>
+        <div class="input-group">
+          <!-- <p>Descrição: {{fases[indexFase].descricao}}</p> -->
+          <p>Descrição: </p>
+        </div>
+        <div class="input-group">
+          <p>CEP: </p>
+        </div>
+        <div class="input-group">
+          <p>Horário: </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal excluir -->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Excluir fase</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <p>Tem certeza que deseja excluir o processo?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-second" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" style="background-color: red; border: none;"data-dismiss="modal">Excluir</button>
+      </div>
+    </div>
+  </div>
+</div>
