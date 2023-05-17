@@ -8,6 +8,8 @@ import { Candidato } from '../Classes';
 })
 export class EditarDadosComponent {
 
+  selectedDate : string ='';
+
   candidato : Candidato = {
     id : 1,
     nome: "string",
@@ -15,14 +17,16 @@ export class EditarDadosComponent {
     telefone : "string",
     email : "string",
     caminhoFt : "string",
-    CPF : "string",
+    cpf : "string",
     nomeProcesso : "string",
     login: "string",
     senha: "string",
     ativo : false,
   }
+  
+
   ngOnInit(): void {
-    
+
     var id = localStorage.getItem("idcandidato")
     var config = {
       method: 'get',
@@ -30,14 +34,53 @@ export class EditarDadosComponent {
       headers: { },
     };
 
+
     var instance = this
     axios(config)
       .then(function (response) {
         instance.candidato = response.data
+        console.log(response.data)
+        console.log(instance.candidato.cpf)
       })
       .catch(function (error) {
         console.log(error);
       });
 
+    let dateObject = new Date(this.candidato.dataNascimento)
+    this.selectedDate = dateObject.toISOString().substr(0, 10);
+
+    var url = "https://localhost:7049/CandidatoProcesso/Perfil/"+id
+
+    try{
+      var response = axios.get(url)
+    }catch{
+      throw console.error();
+      
+    }
+
+  }
+
+  editarCandidato(){
+    var id = localStorage.getItem("idcandidato")
+
+    
+    this.candidato.nome = (document.getElementById("nome") as HTMLInputElement).value;
+    this.candidato.dataNascimento = new Date((document.getElementById("nascimento") as HTMLInputElement).value);
+    this.candidato.telefone = (document.getElementById("telefone") as HTMLInputElement).value;
+    this.candidato.email = (document.getElementById("email") as HTMLInputElement).value;
+    let login = (document.getElementById("login") as HTMLInputElement).value;
+    let senha = (document.getElementById("senha") as HTMLInputElement).value;
+    let cpf = (document.getElementById("cpf") as HTMLInputElement).value;
+
+    const url = 'https://localhost:7049/Candidato/PerfilEdit/'+id
+
+    try{
+      const response = axios.put(url,this.candidato)
+      console.log(response)
+    }catch{
+      throw console.error();
+      
+    }
+   
   }
 }
