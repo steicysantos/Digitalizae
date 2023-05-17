@@ -107,7 +107,7 @@ h2{
     width: 115%;
     display: flex;
     align-content: center;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 

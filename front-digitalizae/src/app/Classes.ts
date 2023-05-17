@@ -23,7 +23,9 @@ export interface Candidato{
 }
 
 export interface Fase {
+    nome:string,
     id: number,
+    data :string,
     idProcessoSeletivo: number,
     tipo : true,
     descricao: string,

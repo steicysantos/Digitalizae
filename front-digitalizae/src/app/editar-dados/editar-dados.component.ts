@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import axios from 'axios';
-import { Candidato } from '../Classes';
+import { Candidato, Processo } from '../Classes';
 @Component({
   selector: 'app-editar-dados',
   templateUrl: './editar-dados.component.html',
@@ -22,6 +22,14 @@ export class EditarDadosComponent {
     login: "string",
     senha: "string",
     ativo : false,
+  }
+
+  processo : Processo ={
+      nome : "string",
+      DataInicio: "string",
+      DataFim: "string",
+      ativo : true,
+      qtdeMax : 123
   }
   
 
@@ -49,14 +57,23 @@ export class EditarDadosComponent {
     let dateObject = new Date(this.candidato.dataNascimento)
     this.selectedDate = dateObject.toISOString().substr(0, 10);
 
-    var url = "https://localhost:7049/CandidatoProcesso/Perfil/"+id
+    var url = "https://localhost:7049/GetProcessoCandidato/"+id
 
-    try{
-      var response = axios.get(url)
-    }catch{
-      throw console.error();
-      
-    }
+    var config = {
+      method: 'get',
+      url: url,
+      headers: { },
+    };
+
+    var instance = this
+    axios(config)
+      .then(function (response) {
+        instance.processo = response.data
+        console.log(response.data)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
 
   }
 

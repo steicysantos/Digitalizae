@@ -11,7 +11,7 @@ export class CadastroCandidatoComponent {
   constructor() { }
 
   ngOnInit(): void {
-
+    let url = ""
   }
 
   CandidatoRegister() {
