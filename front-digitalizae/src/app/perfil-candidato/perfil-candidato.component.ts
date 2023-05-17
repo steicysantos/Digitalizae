@@ -15,7 +15,7 @@ export class PerfilCandidatoComponent {
     telefone : "string",
     email : "string",
     caminhoFt : "string",
-    CPF : "string",
+    cpf : "string",
     nomeProcesso : "string",
     login: "string",
     senha: "string",

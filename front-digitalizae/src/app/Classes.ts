@@ -11,7 +11,7 @@ export interface Processo{
 export interface Candidato{
     id : number,
     nome: string,
-    CPF: string,
+    cpf: string,
     login: string,
     senha: string,
     dataNascimento: Date,
@@ -30,3 +30,11 @@ export interface Fase {
     local: string,
 }
 
+export interface Curso{
+    id: number,
+    nome : string,
+    dataInicio : Date,
+    dataFim : Date,
+    ativo : boolean,
+    qtdemax : number
+}

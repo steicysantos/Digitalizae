@@ -10,15 +10,15 @@
                 </div>
                 <div class="input-box">
                     <span class="details">CPF</span>
-                    <input type="text" id="cpf" placeholder="" value="{{candidato.CPF}}" disabled="">
+                    <input type="text" id="cpf" placeholder="" value="{{candidato.cpf}}" disabled="">
                 </div>
                 <div class="input-box">
                     <span class="details">Data de nascimento</span>
-                    <input type="date" id="nascimento" placeholder="" value="{{candidato.dataNascimento}}"  required>
+                    <input type="date" id="nascimento" placeholder="" value="{{selectedDate}}"  required>
                 </div>
                 <div class="input-box">
                     <span class="details">Telefone</span>
-                    <input type="number" id="telefone" placeholder="" required value="{{candidato.telefone}}"
+                    <input type="text" id="telefone" placeholder="" required value="{{candidato.telefone}}"
                         style="padding: 15px; width: 100%; height: 45px; outline: none; border-bottom-width: 2px; transition: all 0.3s ease; border-radius: 5px; border: 1px solid #ccc; ">
                 </div>
                 <div class="input-box">
@@ -26,19 +26,14 @@
                     <input type="text" id="email" placeholder="" required value="{{candidato.email}}"
                         style="padding: 15px; width: 100%; height: 45px; outline: none; border-bottom-width: 2px; transition: all 0.3s ease; border-radius: 5px; border: 1px solid #ccc; ">
                 </div>
-                <div class="input-box" style="width: 100%;">
-                    <span class="details">Curso desejado</span>
-                    <select class=" form-select" aria-label="Default select example"
-                        style="padding: 15px; width: 100%; height: 55px; outline: none; border-bottom-width: 2px; transition: all 0.3s ease; border-radius: 5px; border: 1px solid #ccc; ">
-                        <option selected>Selecione um curso</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
+                <div class="input-box">
+                    <span class="details">Curso Atual</span>
+                    <input type="text" id="curso" placeholder="" disabled="" value=""
+                        style="padding: 15px; width: 100%; height: 45px; outline: none; border-bottom-width: 2px; transition: all 0.3s ease; border-radius: 5px; border: 1px solid #ccc; ">
                 </div>
                 <div class="input-box">
                     <span class="details">Login</span>
-                    <input type="text" id="login" placeholder="" disabled=""
+                    <input type="text" id="login" placeholder="" disabled="" value="{{candidato.login}}"
                         style="padding: 15px; width: 100%; height: 45px; outline: none; border-bottom-width: 2px; transition: all 0.3s ease; border-radius: 5px; border: 1px solid #ccc; ">
                 </div>
                 <div class="input-box">
@@ -49,7 +44,7 @@
             </div>
             <div class="btn-group" style="display: flex; justify-content: flex-end; flex-direction: row; gap: 2rem;">
             <button type="button" class="btn" style="border-radius: 10px; color: #094780; background-color: white; border: 2px solid #094780;" [routerLink]="['/perfil-candidato']">Voltar</button>
-            <button type="button" class="btn" style="border-radius: 10px;" >Alterar</button>
+            <button type="button" class="btn" style="border-radius: 10px;" (click)="editarCandidato()">Alterar</button>
         </div>
         </form>
     </div>
