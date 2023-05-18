@@ -9,6 +9,7 @@ import axios from "axios";
 export class VisualizaFaseComponent {
   progresso : Array<Fase> = []
   qtde : Array<Fase> =[]
+  active : boolean = false
   faseAtual : Fase ={
     titulo:"string",
     id: 1,
@@ -22,8 +23,8 @@ export class VisualizaFaseComponent {
   }
   ngOnInit(): void {
 
-  let processo =  localStorage.getItem("id_processo")
-  let id =  localStorage.getItem("idcandidato")
+    let processo =  localStorage.getItem("id_processo")
+    let id =  localStorage.getItem("idcandidato")
 
     var config = {
       method: 'get',
@@ -60,6 +61,14 @@ export class VisualizaFaseComponent {
         console.log(error);
       });
 
+  }
+
+  checkActive(){
+    let instance = this
+    let url = 'https://localhost:7049/CandidatoProcesso/checkActive'
+    axios.get(url).then(function(response){
+      instance.active = response.data
+    })
   }
 
   SetFaseModal(i : number){

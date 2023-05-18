@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./top-bar-candidato.component.css']
 })
 export class TopBarCandidatoComponent {
-
+  sair(){
+    localStorage.setItem("idcandidato","0")
+  }
 }

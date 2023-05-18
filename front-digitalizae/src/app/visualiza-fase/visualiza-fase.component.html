@@ -6,7 +6,7 @@
     <div class="container">
         <div class="progressoUsuario">
             <div class="progressBar">
-                <progress id="file" value="{{progresso.length+1}}" max="{{qtde.length+1}}"></progress>
+                <progress id="file" value="{{progresso.length}}" max="{{qtde.length}}"></progress>
                 <div class="progressbar">
                     <div *ngFor="let a of qtde; index as i" class="location" class="progress-step" [ngClass]="{ 'progress-step-active': progresso.length >  i }"
                         id=""data-title="" data-toggle="modal" data-target="#exampleModal" (click)="SetFaseModal(i)">

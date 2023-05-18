@@ -30,8 +30,8 @@
                         <img class="js-o-header__logo o-header__logo" src="../../assets/exit.png"
                             style="width: 20px; display: flex; align-items: center; justify-content: center; margin-top: 10px;" />
                     </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" [routerLink]="['/login']">Sair</a>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="sair()" [routerLink]="['/login']">Sair</a>
                     </li>
                 </ul>
             </div>

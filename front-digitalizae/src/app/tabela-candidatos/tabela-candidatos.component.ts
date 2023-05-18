@@ -1,5 +1,5 @@
 import { Component, ViewChildren, QueryList, ElementRef } from '@angular/core';
-import { Candidato } from '../Classes';
+import { Candidato, Fase, Processo } from '../Classes';
 import axios from 'axios';
 import { ActivatedRoute } from '@angular/router';
 @Component({
@@ -10,8 +10,22 @@ import { ActivatedRoute } from '@angular/router';
 export class TabelaCandidatosComponent {
   candidatos : Array<Candidato> = []
   processoId : number = 0
-  constructor(private route: ActivatedRoute) { }
+  checked : Array<number> = []
+  aprovados : Array<Candidato> = []
+  fases : Array<Fase> = []
+
+  processo : Processo = {
+    id:0,
+    nome:"Desenvolvimento de sistemas",
+    dataFim: Date.now().toString(),
+    dataInicio: Date.now().toString(),
+    ativo: true,
+    qtdeMax: 500
+  }
+
   
+  constructor(private route: ActivatedRoute) { }
+
   @ViewChildren('customCheckbox') checkboxes!: QueryList<ElementRef>;
 
   ngOnInit(): void {
@@ -20,8 +34,10 @@ export class TabelaCandidatosComponent {
       this.processoId = params['id'];
       
     });
-    console.log(this.processoId)
-    var url = 'https://localhost:7049/CandidatoProcesso/getAllCandidatosProcesso/'+this.processoId
+    
+    this.GetFases()
+
+    var url = 'https://localhost:7049/CandidatoProcesso/getAllCandidatosProcessoFaseAtual/'+this.processoId
 
     var config = {
       method: 'get',
@@ -42,20 +58,48 @@ export class TabelaCandidatosComponent {
       .catch(function (error) {
         console.log(error);
       });
-    
+
+      url = 'https://localhost:7049/Processo/getProcesso/'+this.processoId
+
+      axios.get(url).then(function(response){instance.processo = response.data[0], console.log(instance.processo)})
+      
   }
 
-  confirmarAprovados(){
-    
+  addCheck(id : number){
+    console.log(this.checked)
+    if(!this.checked.includes(id))
+      this.checked.push(id)
+    else{
+      this.checked = this.checked.filter(arr => arr != id);
+    }
   }
 
   verifyChecked() {
-    console.log("En")
-    this.checkboxes.forEach((checkbox: ElementRef) => {
-      const isChecked = checkbox.nativeElement.checked;
-      console.log('Checkbox checked:', isChecked);
+    let instance = this
+    this.candidatos.forEach(function(candidato){
+      if(instance.checked.includes(candidato.id)){
+        instance.aprovados.push(candidato)
+      }
     });
   }
+
+  Aprovar(){
+    this.aprovados.forEach(function(candidatoid) {
+      
+    });
+  }
+
+  GetFases(){
+    let instance = this
+    let url =  'https://localhost:7049/Fase/getFaseProcesso/'+this.processoId
+
+    console.log(url)
+    axios.get(url).then(function(response){
+      instance.fases = response.data
+      console.log(response.data)
+    })
+  }
+
 } 
 
 

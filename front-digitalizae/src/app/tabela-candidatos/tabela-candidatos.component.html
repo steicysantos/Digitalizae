@@ -8,7 +8,7 @@
                 d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
         </svg>
         <div class="title">
-            *Nome do Processo Seletivo*
+           {{processo.nome}}
         </div>
     </div>
     <div class="container" style="display: flex; flex-direction: column;">
@@ -27,8 +27,7 @@
                     <td>{{a.nome}}</td>
                     <td>{{a.email}}</td>
                     <td>{{a.dataNascimento  |  date:'dd/MM/yyyy'}}</td>
-                    <td><input type="checkbox" id="checks" class="checkBoxes"  unchecked data-toggle="toggle" data-onstyle="secondary"></td>
-                    <!-- <td><input type="checkbox" class="custom-checkbox" [(ngModel)]="checkbox1"></td> -->
+                    <td><input type="checkbox" unchecked data-toggle="toggle" data-onstyle="secondary" (click)="addCheck(a.id)"></td>                    
                 </tr>
             </tbody>
         </table>
@@ -47,16 +46,13 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="input-group">
-                    <p>Nathan Cordeiro Ansay</p>
-                </div>
-                <div>
-                    <p>Steicy Mayara dos Santos</p>
+                <div class="input-group" *ngFor="let a of aprovados; index as i">
+                    <p>{{a.nome}}</p>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-second" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Aprovar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="Aprovar()">Aprovar</button>
             </div>
         </div>
     </div>
