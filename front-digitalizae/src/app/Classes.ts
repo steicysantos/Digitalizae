@@ -24,13 +24,14 @@ export interface Candidato{
 }
 
 export interface Fase {
-    titulo:string,
-    id: number,
-    data :string,
-    idProcessoSeletivo: number,
+    titulo : string,
+    id : number,
+    data : string,
+    idProcessoSeletivo : number,
     tipo : boolean,
-    descricao: string,
-    local: string,
-    endereco: string,
+    descricao : string,
+    local : string,
+    endereco : string,
+    atual : boolean,
 }
 

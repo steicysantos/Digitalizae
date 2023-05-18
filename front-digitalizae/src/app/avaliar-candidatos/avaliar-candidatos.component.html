@@ -3,29 +3,12 @@
 <body>
     <h2>Processos seletivos ativos</h2>
     <div class="group-cards" >
-        <div class="card" style="display: flex; align-items: center; justify-content: center;">
-            <h5 class="card-header">Desenvolvimento de Sistemas</h5>
+        <div class="card" style="display: flex; align-items: center; justify-content: center;" *ngFor="let a of processos; index as i">
+            <h5 class="card-header">{{processos[i].nome}}</h5>
             <div class="card-body">
-                <p class="card-text" style="text-align: center;">20/02/2002</p>
-                <a href="#" class="btn btn-primary" [routerLink]="['/tabela-candidatos']">Avaliar candidatos</a>
+                <p class="card-text" style="text-align: center;">{{processos[i].dataInicio |  date:'dd/MM/yyyy'}}</p>
+                <a href="#" class="btn btn-primary" [routerLink]="['/tabela-candidatos/',processos[i].id]">Avaliar candidatos</a>
             </div>
         </div>
-        <div class="card" style="display: flex; align-items: center; justify-content: center;">
-            <h5 class="card-header" style="width: 100%; text-align: center;">Manufatura</h5>
-            <div class="card-body">
-                <p class="card-text" style="text-align: center;">20/02/2002</p>
-                <a href="#" class="btn btn-primary">Avaliar candidatos</a>
-            </div>
-        </div>
-        <div class="card" style="display: flex; align-items: center; justify-content: center;">
-            <h5 class="card-header">Desenvolvimento de Sistemas</h5>
-            <div class="card-body">
-                <p class="card-text" style="text-align: center;">20/02/2002</p>
-                <a href="#" class="btn btn-primary">Avaliar candidatos</a>
-            </div>
-        </div>
-
     </div>
-
-
-</body>
+</body> 

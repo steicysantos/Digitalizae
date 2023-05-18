@@ -18,6 +18,7 @@ export class VisualizaFaseComponent {
     descricao: "string",
     local: "string",
     endereco: "string",
+    atual :false,
   }
   ngOnInit(): void {
 

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Fase, Processo } from '../Classes';
 import axios from 'axios';
+import { createMayBeForwardRefExpression } from '@angular/compiler';
 @Component({
   selector: 'app-tabela-processo-seletivo',
   templateUrl: './tabela-processo-seletivo.component.html',
@@ -9,6 +10,14 @@ import axios from 'axios';
 })
 export class TabelaProcessoSeletivoComponent {
   processoId : string = ""
+  processo : Processo = {
+    id:0,
+    nome:"Desenvolvimento de sistemas",
+    dataFim: Date.now().toString(),
+    dataInicio: Date.now().toString(),
+    ativo: true,
+    qtdeMax: 500
+  }
   fases : Array<Fase> = []
   idFaseModal : number = 0
   fasemodaldata : string = ""
@@ -21,6 +30,7 @@ export class TabelaProcessoSeletivoComponent {
     descricao: "string",
     local: "string",
     endereco: "string",
+    atual: false,
   }
   constructor(private route: ActivatedRoute) { }
 
@@ -42,7 +52,7 @@ export class TabelaProcessoSeletivoComponent {
       .then(function (response) {
         console.log(response.data)
         instance.fases = response.data
-        console.log(instance.fases)
+        instance.processo = response.data[0].processo
       })
       .catch(function (error) {
         console.log(error);
@@ -74,6 +84,7 @@ export class TabelaProcessoSeletivoComponent {
       local :local,
       endereco : endereco,
       processo_Id : idProcessoSeletivo,
+      atual : false
     });
 
     var config = {

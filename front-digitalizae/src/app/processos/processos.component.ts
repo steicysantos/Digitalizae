@@ -9,7 +9,6 @@ import axios from 'axios';
 export class ProcessosComponent {
   processos : Array<Processo> = []
 
-  
   ngOnInit(): void {
     var url = 'https://localhost:7049/Processo/GetAll'
 

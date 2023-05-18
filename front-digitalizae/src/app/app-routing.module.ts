@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'tabela-processo-seletivo/:id', component:TabelaProcessoSeletivoComponent},
   { path: 'perfil-candidato', component:PerfilCandidatoComponent},
   { path: 'avaliar-candidatos', component:AvaliarCandidatosComponent},
-  { path: 'tabela-candidatos', component:TabelaCandidatosComponent},
+  { path: 'tabela-candidatos/:id', component:TabelaCandidatosComponent},
   { path: 'adm', component:AdmComponent},
   { path: 'processos', component:ProcessosComponent},
   { path: 'editar-dados', component:EditarDadosComponent},
