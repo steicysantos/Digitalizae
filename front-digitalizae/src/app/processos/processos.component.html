@@ -18,14 +18,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Desenvolvimento de sistemas</td>
-          <td>20/02/2002</td>
-          <td>18/03/2003</td>
-          <td>18</td>
+        <tr *ngFor="let a of processos; index as i">
+          <td>{{processos[i].nome}}</td>
+          <td>{{processos[i].dataInicio | date:'dd/MM/yyyy'}}</td>
+          <td>{{processos[i].dataFim | date:'dd/MM/yyyy'}}</td>
+          <td>{{processos[i].qtdeMax}}</td>
           <td><a href="#" data-toggle="modal" data-target="#edit"><img src="../../assets/editing.png"
                 style="width: 30px;" alt="" srcset=""></a></td>
-          <td><a href="#" [routerLink]="['/tabela-processo-seletivo']"><img src="../../assets/eye.png"
+          <td><a href="#" [routerLink]="['/tabela-processo-seletivo/',processos[i].id]"><img src="../../assets/eye.png"
                 style="width: 30px;" alt="" srcset=""></a></td>
           <td><a href="#" data-toggle="modal" data-target="#delete"><img src="../../assets/trash.png"
                 style="width: 30px;" alt="" srcset=""></a></td>

@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'cadastro-processo-seletivo', component: CadastroProcessoSeletivoComponent},
   { path: 'historico-processos', component: HistoricoProcessosComponent},
   { path: 'visualiza-fase', component:VisualizaFaseComponent},
-  { path: 'tabela-processo-seletivo', component:TabelaProcessoSeletivoComponent},
+  { path: 'tabela-processo-seletivo/:id', component:TabelaProcessoSeletivoComponent},
   { path: 'perfil-candidato', component:PerfilCandidatoComponent},
   { path: 'avaliar-candidatos', component:AvaliarCandidatosComponent},
   { path: 'tabela-candidatos', component:TabelaCandidatosComponent},

@@ -10,13 +10,14 @@ export class VisualizaFaseComponent {
   progresso : Array<Fase> = []
   qtde : Array<Fase> =[]
   faseAtual : Fase ={
-    nome:"string",
+    titulo:"string",
     id: 1,
     data :"string",
     idProcessoSeletivo: 1,
     tipo : true,
     descricao: "string",
     local: "string",
+    endereco: "string",
   }
   ngOnInit(): void {
 

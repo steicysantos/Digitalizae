@@ -25,12 +25,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Prova Teórica</td>
-          <td>Prova 90 questões pipipopo</td>
-          <td>Sesi Centro</td>
-          <td>18/03/2023</td>
-          <td><a href="#" data-toggle="modal" data-target="#editar-fase"><img src="../../assets/editing.png" style="width: 30px;"alt="" srcset=""></a></td>
+        <tr *ngFor="let a of fases; index as i">
+          <td>{{fases[i].titulo}}</td>
+          <td>{{fases[i].descricao}}</td>
+          <td>{{fases[i].local}}</td>
+          <td>{{fases[i].data | date:"dd/MM/YYYY"}}</td>
+          <td><a href="#" data-toggle="modal" data-target="#editar-fase" (click)="setFaseModal(i)"><img src="../../assets/editing.png" style="width: 30px;"alt="" srcset=""></a></td>
           <td><a href="#" data-toggle="modal" data-target="#excluir-fase"><img src="../../assets/trash.png" style="width: 30px;"alt="" srcset=""></a></td>
         </tr>
       </tbody>
@@ -62,34 +62,36 @@
           <form action="#">
             <div class="user-details">
               <div class="input-box">
-                <span class="details">Tipo</span>
-                <input type="text" id="Nome" placeholder="" required>
+                <span class="details">Título</span>
+                <input type="text" id="tituloRegister" placeholder="" required>
               </div>
-              <div class="input-box">
-                <span class="details">Data da fase</span>
-                <input type="date" id="date" placeholder="" required>
-              </div>
-              <div class="input-box">
-                <span class="details">Número de candidatos</span>
-                <input type="number" id="number" placeholder="" required
-                  style="padding: 15px; width: 100%; height: 45px; outline: none; border-bottom-width: 2px; transition: all 0.3s ease; border-radius: 5px; border: 1px solid #ccc; ">
-              </div>
-
               <div class="input-box">
                 <span class="details" for="type" style="margin-bottom: 1.4rem;">Formato</span>
                 <input type="radio" name="type" value="1" required>Online
                 <input type="radio" name="type" value="2" required>Presencial
               </div>
+              <div class="input-box">
+                <span class="details">Local</span>
+                <input type="text" id="localRegister" placeholder="" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Data da fase</span>
+                <input type="date" id="dataRegister" placeholder="" required>
+              </div>
+              <div class="input-box" style="width: 100%;">
+                <span class="details" >Endereço</span>
+                <input type="text" id="enderecoRegister" placeholder="" required>
+              </div>
               <div class="input-box" style="width: 100%;">
                 <span class="details">Descrição</span>
-                <input type="text" id="Nome" placeholder="" required style="height: 100px;">
+                <input type="text" id="descricaoRegister" placeholder="" required style="height: 100px;">
               </div>
             </div>
           </form>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Cadastrar</button>
+        <input type="submit" class="btn btn-primary" data-dismiss="modal" (click)="registerFase()">
       </div>
     </div>
   </div>
@@ -112,18 +114,12 @@
             <div class="user-details">
               <div class="input-box">
                 <span class="details">Tipo</span>
-                <input type="text" id="Nome" placeholder="" required>
+                <input type="text" id="Nome" placeholder="" required value="{{fases[idFaseModal].titulo}}">
               </div>
               <div class="input-box">
                 <span class="details">Data da fase</span>
-                <input type="date" id="date" placeholder="" required>
+                <input type="date" id="date" placeholder="" required value="{{fasemodaldata}}">
               </div>
-              <div class="input-box">
-                <span class="details">Número de candidatos</span>
-                <input type="number" id="number" placeholder="" required
-                  style="padding: 15px; width: 100%; height: 45px; outline: none; border-bottom-width: 2px; transition: all 0.3s ease; border-radius: 5px; border: 1px solid #ccc; ">
-              </div>
-
               <div class="input-box">
                 <span class="details" for="type" style="margin-bottom: 1.4rem;">Formato</span>
                 <input type="radio" name="type" value="1" required>Online
@@ -131,7 +127,7 @@
               </div>
               <div class="input-box" style="width: 100%;">
                 <span class="details">Descrição</span>
-                <input type="text" id="Nome" placeholder="" required style="height: 100px;">
+                <input type="text" id="Nome" placeholder="" value="{{fases[idFaseModal].descricao}}" required style="height: 100px;">
               </div>
             </div>
           </form>

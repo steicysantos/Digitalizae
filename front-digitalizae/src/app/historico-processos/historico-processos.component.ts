@@ -10,8 +10,8 @@ export class HistoricoProcessosComponent {
   processo : Processo = {
     id:0,
     nome:"Desenvolvimento de sistemas",
-    DataFim: Date.now().toString(),
-    DataInicio: Date.now().toString(),
+    dataFim: Date.now().toString(),
+    dataInicio: Date.now().toString(),
     ativo: true,
     qtdeMax: 500
   }

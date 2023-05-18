@@ -20,15 +20,17 @@ export class CadastroProcessoSeletivoComponent {
     let numcandidatos = (document.getElementById("numcandidatos") as HTMLInputElement).value;
 
     var data = JSON.stringify({
-      curso: curso,
-      inicio: inicio,
-      fim: fim,
-      numcandidatos: numcandidatos
+      nome: curso,
+      adm_id : 1,
+      dataInicio: inicio+"T00:00:00.000Z",
+      dataFim: fim+"T00:00:00.000Z",
+      qtdeMax: numcandidatos,
+      ativo : false,
     });
 
     var config = {
       method: 'post',
-      url: '',
+      url: 'https://localhost:7049/Processo/register',
       headers: {
         'Content-Type': 'application/json'
       },
