@@ -23,27 +23,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Nathan Ansay Cordeiro</td>
-                    <td>nathancordeiro@gmail.com</td>
-                    <td>18/03/2003</td>
-                    <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="secondary"></td>
-                </tr>
-                <tr>
-                    <td>Steicy Mayara dos Santos</td>
-                    <td>steicymsantos@gmail.com</td>
-                    <td>20/02/2002</td>
-                    <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="secondary"></td>
-                </tr>
-                <tr>
-                    <td>Carlos Costa</td>
-                    <td>carcos@gmail.com</td>
-                    <td>15/06/2005</td>
-                    <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="secondary"></td>
+                <tr *ngFor="let a of candidatos; index as i">
+                    <td>{{a.nome}}</td>
+                    <td>{{a.email}}</td>
+                    <td>{{a.dataNascimento  |  date:'dd/MM/yyyy'}}</td>
+                    <td><input type="checkbox" id="checks" class="checkBoxes"  unchecked data-toggle="toggle" data-onstyle="secondary"></td>
+                    <!-- <td><input type="checkbox" class="custom-checkbox" [(ngModel)]="checkbox1"></td> -->
                 </tr>
             </tbody>
         </table>
-        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#candidatos-aprovados" style="width: 25%;">Aprovar candidatos</a>
+        <a href="#" name="" class="btn btn-primary" data-toggle="modal" data-target="#candidatos-aprovados" style="width: 25%;" (click)="verifyChecked()">Aprovar candidatos</a>
     </div>
 </body>
 
