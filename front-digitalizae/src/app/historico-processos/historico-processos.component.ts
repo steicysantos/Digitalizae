@@ -8,6 +8,7 @@ import { CadastroCandidatoComponent } from '../cadastro-candidato/cadastro-candi
 })
 export class HistoricoProcessosComponent {
   processo : Processo = {
+    id:0,
     nome:"Desenvolvimento de sistemas",
     DataFim: Date.now().toString(),
     DataInicio: Date.now().toString(),

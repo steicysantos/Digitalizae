@@ -10,10 +10,6 @@
                     <input type="text" id="nome" placeholder="" required>
                 </div>
                 <div class="input-box">
-                    <span class="details">CPF</span>
-                    <input type="number" id="cpf" placeholder="" required>
-                </div>
-                <div class="input-box">
                     <span class="details">Data de nascimento</span>
                     <input type="date" id="nascimento" placeholder="" required>
                 </div>
@@ -34,12 +30,10 @@
                 </div>
                 <div class="input-box" style="width: 100%;">
                     <span class="details">Curso desejado</span>
-                    <select class=" form-select" aria-label="Default select example"
+                    <select class=" form-select" aria-label="Default select example" (change)="onSelectChange($event)" required
                         style="padding: 15px; width: 100%; height: 55px; outline: none; border-bottom-width: 2px; transition: all 0.3s ease; border-radius: 5px; border: 1px solid #ccc; ">
                         <option selected>Selecione um curso</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option *ngFor="let a of processos; index as i" value="{{a.id}}">{{a.nome}}</option>
                     </select>
                 </div>
                 <div class="input-box">
@@ -53,7 +47,7 @@
                         style="padding: 15px; width: 100%; height: 45px; outline: none; border-bottom-width: 2px; transition: all 0.3s ease; border-radius: 5px; border: 1px solid #ccc; ">
                 </div>
             </div>
-            <a href="#" class="btn btn-primary">Finalizar inscrição</a>
+            <input type="submit" value="Cadastrar" (click)="CandidatoRegister()" class="btn btn-primary">
         </form>
     </div>
 </body>

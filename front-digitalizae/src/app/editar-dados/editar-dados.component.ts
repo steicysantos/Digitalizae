@@ -25,6 +25,7 @@ export class EditarDadosComponent {
   }
 
   processo : Processo ={
+      id:0,
       nome : "string",
       DataInicio: "string",
       DataFim: "string",

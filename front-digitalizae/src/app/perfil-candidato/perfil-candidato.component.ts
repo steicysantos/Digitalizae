@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import axios from 'axios';
 import { Candidato } from '../Classes';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-perfil-candidato',
   templateUrl: './perfil-candidato.component.html',
@@ -8,6 +9,8 @@ import { Candidato } from '../Classes';
 })
 export class PerfilCandidatoComponent {
 
+  constructor(private router: Router) { }
+  
   candidato : Candidato = {
     id : 1,
     nome: "string",
@@ -23,7 +26,13 @@ export class PerfilCandidatoComponent {
   }
   
   ngOnInit(): void {
+    
     var id = localStorage.getItem("idcandidato")
+
+    if (id == "0"){
+      this.router.navigate(['/login'])
+    }
+
     var config = {
       method: 'get',
       url: 'https://localhost:7049/Candidato/Perfil/'+id,

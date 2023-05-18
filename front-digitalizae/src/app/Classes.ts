@@ -1,6 +1,7 @@
 import { subscriptionLogsToBeFn } from "rxjs/internal/testing/TestScheduler";
 
 export interface Processo{
+    id:number,
     nome : string,
     DataInicio: string;
     DataFim: string;
@@ -32,11 +33,3 @@ export interface Fase {
     local: string,
 }
 
-export interface Curso{
-    id: number,
-    nome : string,
-    dataInicio : Date,
-    dataFim : Date,
-    ativo : boolean,
-    qtdemax : number
-}
