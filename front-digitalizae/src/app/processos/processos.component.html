@@ -28,7 +28,7 @@
                 style="width: 30px;" alt="" srcset=""></a></td>
           <td><a href="#" [routerLink]="['/tabela-processo-seletivo/',processos[i].id]"><img src="../../assets/eye.png"
                 style="width: 30px;" alt="" srcset=""></a></td>
-          <td><a href="#" data-toggle="modal" data-target="#delete"><img src="../../assets/trash.png"
+          <td><a href="#" data-toggle="modal" data-target="#delete" (click)="deletarProcesso(a.id)"><img src="../../assets/trash.png"
                 style="width: 30px;" alt="" srcset=""></a></td>
           <td><input *ngIf="processos[i].ativo" type="checkbox" checked (click)="changeStatus(processos[i].id)">
               <input *ngIf="!processos[i].ativo" type="checkbox" unchecked (click)="changeStatus(processos[i].id)"></td>
@@ -44,7 +44,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Informações sobre a etapa:</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Editar processo seletivo:</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -69,11 +69,6 @@
                 <span class="details">Quantidade máxima de candidatos</span>
                 <input type="number" id="numcandidatos" placeholder="" required
                   style="padding: 15px; width: 100%; height: 45px; outline: none; border-bottom-width: 2px; transition: all 0.3s ease; border-radius: 5px; border: 1px solid #ccc; ">
-              </div>
-              <div class="input-box">
-                <span class="details" for="type" style="margin-bottom: 1.4rem;">O processo seletivo esta ativo?</span>
-                <input type="radio" name="type" value="1" required>Sim
-                <input type="radio" name="type" value="2" required>Não
               </div>
             </div>
           </form>

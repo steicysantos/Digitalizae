@@ -10,6 +10,7 @@ import { createMayBeForwardRefExpression } from '@angular/compiler';
 })
 export class TabelaProcessoSeletivoComponent {
   processoId : string = ""
+  id: number = -1
   processo : Processo = {
     id:0,
     nome:"Desenvolvimento de sistemas",
@@ -108,6 +109,34 @@ export class TabelaProcessoSeletivoComponent {
       });
    
   
+  }
+
+  deletarFase(id: number) {
+
+    var instance = this
+
+    var config = {
+    method: 'delete',
+    url: 'https://localhost:7049/Fase/Delet/' + id,
+    headers: {
+     'Content-Type': 'application/json'
+   },
+    
+     data: ''
+    };
+    
+    axios(config).then(function (response) {
+     instance.fases.forEach(element => {
+    if (element.id == instance.id) { 
+     var indice = instance.fases?.indexOf(element)
+     instance.fases.splice(indice, 1)
+    
+   }
+    
+    });
+    
+    })
+    
   }
 
 }

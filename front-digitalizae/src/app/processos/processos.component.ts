@@ -8,6 +8,7 @@ import axios from 'axios';
 })
 export class ProcessosComponent {
   processos : Array<Processo> = []
+  id : number = -1
 
   ngOnInit(): void {
     var url = 'https://localhost:7049/Processo/GetAll'
@@ -39,5 +40,36 @@ export class ProcessosComponent {
       console.log(response.data)
       window.location.reload();
     })
+  }
+
+  deletarProcesso(id: number) {
+
+    var instance = this
+
+    var config = {
+    method: 'delete',
+    url: 'https://localhost:7049/Processo/Delet/' + id,
+    headers: {
+     'Content-Type': 'application/json'
+   },
+    
+     data: ''
+    };
+    
+    
+    
+    
+    axios(config).then(function (response) {
+     instance.processos.forEach(element => {
+    if (element.id == instance.id) { 
+     var indice = instance.processos?.indexOf(element)
+     instance.processos.splice(indice, 1)
+    
+   }
+    
+    });
+    
+    })
+    
   }
 }

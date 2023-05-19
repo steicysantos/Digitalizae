@@ -97,9 +97,9 @@ export class TabelaCandidatosComponent {
 
   Aprovar(){
     var instance = this
-    // this.aprovados.forEach(function(candidato) {
-    //   instance.registerCandidatoFase(candidato.id)
-    // });
+    this.aprovados.forEach(function(candidato) {
+      instance.registerCandidatoFase(candidato.id)
+    });
     this.setFaseAtual()
   }
 

@@ -31,7 +31,7 @@
           <td>{{fases[i].local}}</td>
           <td>{{fases[i].data | date:"dd/MM/YYYY"}}</td>
           <td><a href="#" data-toggle="modal" data-target="#editar-fase" (click)="setFaseModal(i)"><img src="../../assets/editing.png" style="width: 30px;"alt="" srcset=""></a></td>
-          <td><a href="#" data-toggle="modal" data-target="#excluir-fase"><img src="../../assets/trash.png" style="width: 30px;"alt="" srcset=""></a></td>
+          <td><a href="#" (click)="deletarFase(a.id)"><img src="../../assets/trash.png" style="width: 30px;"alt="" srcset=""></a></td>
         </tr>
       </tbody>
     </table>
