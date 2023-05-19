@@ -15,6 +15,7 @@
           <th scope="col">Editar</th>
           <th scope="col">Visualiza</th>
           <th scope="col">Excluir</th>
+          <th scope="col">Ativo</th>
         </tr>
       </thead>
       <tbody>
@@ -29,6 +30,8 @@
                 style="width: 30px;" alt="" srcset=""></a></td>
           <td><a href="#" data-toggle="modal" data-target="#delete"><img src="../../assets/trash.png"
                 style="width: 30px;" alt="" srcset=""></a></td>
+          <td><input *ngIf="processos[i].ativo" type="checkbox" checked (click)="changeStatus(processos[i].id)">
+              <input *ngIf="!processos[i].ativo" type="checkbox" unchecked (click)="changeStatus(processos[i].id)"></td>
         </tr>
       </tbody>
     </table>

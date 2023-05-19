@@ -31,4 +31,13 @@ export class ProcessosComponent {
       });
     
   }
+
+  changeStatus(id : number){
+    let url = "https://localhost:7049/Processo/UpdateStatus/"+id
+
+    axios.put(url).then(function(response){
+      console.log(response.data)
+      window.location.reload();
+    })
+  }
 }

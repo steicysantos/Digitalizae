@@ -42,6 +42,7 @@ export class LoginComponent {
       })
       .catch(function (error) {
         console.log(error);
+        alert("Dados incorretos")
       });
       
   }

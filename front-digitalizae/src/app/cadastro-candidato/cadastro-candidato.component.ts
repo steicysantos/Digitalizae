@@ -14,6 +14,7 @@ export class CadastroCandidatoComponent {
   processos : Array<Processo> = []
   selectedProcessoId : number = 0
   newCandidatoId : number = 0
+  faseid : number = 0
 
   ngOnInit(): void {
     var url = 'https://localhost:7049/Processo/GetAllActive'
@@ -113,8 +114,7 @@ export class CadastroCandidatoComponent {
     axios(config)
       .then(function (response) {
         console.log(JSON.stringify(response.data));
-        alert("Cadastro concluído!");
-        instance.router.navigate(["/login"])
+        instance.registerCandidatoFase()
       })
       .catch(function (error) {
         alert("Não foi possível cadastrá-lo no processo escolhido")
@@ -124,5 +124,48 @@ export class CadastroCandidatoComponent {
 
   onSelectChange(event: any) {
     this.selectedProcessoId = event.target.value;
+    this.GetFaseAtual()
+  }
+
+
+  GetFaseAtual(){
+    let instance = this
+    let url =  'https://localhost:7049/Fase/getFaseAtual/'+this.selectedProcessoId
+
+    console.log(url)
+    axios.get(url).then(function(response){
+      instance.faseid = response.data.id
+      console.log(response.data.id)
+    })
+  }
+
+  registerCandidatoFase(){
+  
+    var data = JSON.stringify({
+      candidato_Id: this.newCandidatoId,
+      fase_id: this.faseid
+    });
+    console.log(data)
+    var config = {
+      method: 'post',
+      url: 'https://localhost:7049/CandidatoFase/register',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: data
+    };
+
+    var instance = this
+
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+        alert("Cadastro concluído!")
+        instance.router.navigate(['/login'])
+      })
+      .catch(function (error) {
+        alert("Não foi possível cadastrá-lo na fase")
+
+      });
   }
 }
